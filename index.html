@@ -15,60 +15,57 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#main"><img src="./assets/launcher.ico" width="28" height="28" alt="">Eterspire Trainer</a>
-    <nav aria-label="Main navigation"><a href="#setup">Setup</a><a href="#request">Request a license</a><a href="#changelog">Changelog</a></nav>
+    <nav aria-label="Main navigation"><a href="#request">Request a license</a></nav>
   </header>
   <main id="main">
-    <div class="artwork"><img src="./assets/background.png" width="1370" height="1152" alt="" fetchpriority="high"></div>
     <div class="introduction">
-      <h1>Set up Eterspire Trainer.</h1>
-      <p>Get the Windows launcher, request a license for your device, then import it to get started.</p>
+      <h1>Get started.</h1>
+      <p>Get the launcher, request your device license, and import it to get started.</p>
     </div>
     <div class="setup-grid">
-      <section id="setup" aria-labelledby="setup-title">
-        <h2 id="setup-title">One launcher. Your licensed edition.</h2>
-        <p>The launcher verifies your license and handles supported signed launcher and trainer updates.</p>
+      <section id="setup" class="download-panel" aria-labelledby="setup-title">
+        <h2 id="setup-title">Get the launcher.</h2>
+        <p>Your license, setup and supported updates in one place.</p>
         <div class="download-area">
           <p id="download-status" class="download-status">Download not available yet.</p>
           <a id="download-link" class="button primary" hidden>Download Windows launcher</a>
-          <p id="download-meta" class="metadata">An approved Windows launcher will appear here when it is ready.</p>
+          <p id="download-meta" class="metadata">Windows x64 · Awaiting public release.</p>
         </div>
-        <h3>How setup works</h3>
         <ol class="setup-steps">
-          <li><strong>Open the launcher</strong><p>When the public launcher is available, open it on the Windows PC you want to use.</p></li>
-          <li><strong>Request a device license</strong><p>Choose Request license in the launcher. Use its complete device code and a reply email address in this form.</p></li>
-          <li><strong>Import your license</strong><p>After the publisher approves your request and provides the license file, import it in the launcher. Keep the file for this device.</p></li>
+          <li><strong>Open the launcher</strong><p>Choose Request license to get your device code.</p></li>
+          <li><strong>Request your license</strong><p>Send your device code and reply email using this form.</p></li>
+          <li><strong>Import your license</strong><p>Save the approved license file and import it in the launcher.</p></li>
         </ol>
-        <p class="metadata">Lite and Full access comes from a verified license. Choosing a tier in a request does not activate it.</p>
       </section>
       <section id="request" class="request-panel" aria-labelledby="request-title">
-        <h2 id="request-title">A license for your device.</h2>
-        <p>Copy the device code from the launcher. Your email is used for the publisher's reply after review.</p>
+        <h2 id="request-title">Request a license.</h2>
+        <p>Use the complete device code shown by your launcher.</p>
         <form id="request-form" method="post" novalidate>
           <div class="field">
             <label for="deviceCode">Device code <span class="requirement">Required</span></label>
-            <textarea id="deviceCode" name="deviceCode" rows="3" maxlength="256" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-describedby="device-help deviceCode-error"></textarea>
-            <small id="device-help">ETR1- followed by 64 hexadecimal characters. This page does not read your hardware.</small>
+            <textarea id="deviceCode" name="deviceCode" rows="2" maxlength="256" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-describedby="device-help deviceCode-error"></textarea>
+            <small id="device-help">ETR1- followed by 64 hexadecimal characters.</small>
             <span id="deviceCode-error" class="field-error"></span>
           </div>
           <div class="field-row">
-            <div class="field"><label for="tier">Requested tier</label><select id="tier" name="tier" aria-describedby="tier-error"><option value="1">Lite</option><option value="2">Full</option></select><span id="tier-error" class="field-error"></span></div>
+            <div class="field"><label for="tier">Tier</label><select id="tier" name="tier" aria-describedby="tier-error"><option value="1">Lite</option><option value="2">Full</option></select><span id="tier-error" class="field-error"></span></div>
             <div class="field"><label for="name">Name <span class="requirement">Optional</span></label><input id="name" name="name" type="text" maxlength="80" autocomplete="name" aria-describedby="name-error"><span id="name-error" class="field-error"></span></div>
           </div>
           <div class="field"><label for="email">Reply email <span class="requirement">Required</span></label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required aria-describedby="email-error"><span id="email-error" class="field-error"></span></div>
           <button id="send-request" class="button" type="submit" disabled>Send request</button>
-          <p id="request-status" role="status" aria-live="polite" aria-atomic="true">License requests are not available yet. The request service is being prepared.</p>
+          <p id="request-status" role="status" aria-live="polite" aria-atomic="true">License requests are not available yet.</p>
           <p id="address-status" class="metadata" hidden></p>
           <noscript><p>Enable JavaScript to use license requests once the service is available.</p></noscript>
         </form>
-        <details class="privacy"><summary>How request data is handled</summary><p>When enabled, requests contain your email, device code, requested tier and optional name. They are stored privately and expire after 30 days. Sending a request does not issue a license or send an automatic email.</p><p>The form sends only when you choose Send request. If a launcher link includes a device code in its query, that code reaches the website host before it is removed from the page address. No passwords, license files or raw hardware details are requested.</p></details>
+        <details class="privacy"><summary>Privacy details</summary><p>When enabled, requests are stored privately for 30 days. Email is used for the publisher's reply. Your device code identifies this installation without sharing raw hardware details.</p><p>The form sends only when you choose Send request. A device code in a launcher link reaches the website host before it is removed from the address. Requests need manual approval; no license is issued automatically.</p></details>
       </section>
     </div>
-    <section id="changelog" class="changelog" aria-labelledby="changelog-title">
-      <h2 id="changelog-title">Published changes</h2>
+    <details id="changelog" class="changelog">
+      <summary>Changelog</summary>
       <p id="release-empty">No published releases yet.</p>
       <div id="release-content" hidden><h3>Version <span id="release-version"></span></h3><p class="metadata"><time id="release-date"></time></p><pre id="release-notes"></pre><a id="release-link" hidden>Read the published release notes</a></div>
-    </section>
+    </details>
   </main>
-  <footer><p>Independent Eterspire tools. Not an official Stonehollow Workshop release. Eterspire characters and branding belong to Stonehollow Workshop.</p><a href="https://github.com/eterspire-trainer/eterspire-trainer-releases" rel="noreferrer">Public release repository</a></footer>
+  <footer><p>Independent project. Eterspire branding belongs to Stonehollow Workshop.</p><a href="https://github.com/eterspire-trainer/eterspire-trainer-releases/releases" rel="noreferrer">Releases on GitHub</a></footer>
 </body>
 </html>

@@ -26,7 +26,7 @@ export async function renderRelease(root, value) {
     node('#release-empty').hidden = false;
     node('#release-empty').textContent = 'No published releases yet.';
     node('#download-status').textContent = 'Download not available yet.';
-    node('#download-meta').textContent = 'An approved Windows launcher will appear here when it is ready.';
+    node('#download-meta').textContent = 'Windows x64 · Awaiting public release.';
     for (const selector of ['#release-link', '#download-link']) {
         node(selector).hidden = true;
         node(selector).removeAttribute('href');

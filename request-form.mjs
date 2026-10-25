@@ -61,7 +61,7 @@ export function createRequestController({endpoint, fetcher = fetch, onState, tim
             throw Error('Invalid request endpoint configuration.');
     }
     let pending = false;
-    onState(endpoint === null ? {status: 'unavailable', message: 'License requests are not available yet. The request service is being prepared.'} :
+    onState(endpoint === null ? {status: 'unavailable', message: 'License requests are not available yet.'} :
         {status: 'idle', message: 'Complete the form, then send your request for review.'});
     return {async submit(fields) {
         if (endpoint === null || pending) return;
