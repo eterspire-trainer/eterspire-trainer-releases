@@ -1,0 +1,4 @@
+Eterspire characters and branding are the property of Stonehollow Workshop.
+The background is the existing approved Eterspire launcher artwork, derived from its launcher concept and official brand/character reference.
+The blue/pink crystal icon was drawn for this launcher. See src/launcher/Assets/README.md in the source project for provenance.
+This is an independent project, not an official Eterspire or Stonehollow Workshop release.
