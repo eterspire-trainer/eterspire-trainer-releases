@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://eterspire-runtime.ero--iege.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="description" content="Eterspire Trainer downloads, setup instructions and device-bound license requests. Public release preparation is in progress.">
   <title>Eterspire Trainer | Downloads and license requests</title>
   <link rel="icon" href="./assets/launcher.ico">
@@ -20,12 +20,12 @@
   <main id="main">
     <div class="setup-grid">
       <section id="setup" class="download-panel" aria-labelledby="setup-title">
-        <h2 id="setup-title">Get the launcher.</h2>
-        <p>Your license, setup and supported updates in one place.</p>
+        <h2 id="setup-title">Your trainer.<br>One launcher.</h2>
+        <p>Requires Windows x64, .NET Framework 4.8+ and a valid license. Your verified license selects Lite or Full automatically. More Full features are still in development.</p>
         <div class="download-area">
+          <a id="download-link" class="button primary" hidden><span>Download launcher</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M5 18v3h14v-3"/></svg></a>
           <p id="download-status" class="download-status">Download not available yet.</p>
-          <a id="download-link" class="button primary" hidden>Download Windows launcher</a>
-          <p id="download-meta" class="metadata">Windows x64 · Awaiting public release.</p>
+          <details id="download-details" class="download-details" hidden><summary>File details</summary><p id="download-meta" class="metadata">Windows x64 · Awaiting public release.</p></details>
         </div>
         <ol class="setup-steps" role="list">
           <li><span class="step-number" aria-hidden="true">1</span><div><strong>Open the launcher</strong><p>Choose Request license to get your device code.</p></div></li>
@@ -34,7 +34,7 @@
         </ol>
       </section>
       <section id="request" class="request-panel" aria-labelledby="request-title">
-        <h2 id="request-title">Request a license.</h2>
+        <h2 id="request-title">A license for your device.</h2>
         <p>Use the complete device code shown by your launcher.</p>
         <form id="request-form" method="post" novalidate>
           <div class="field">
@@ -44,7 +44,7 @@
             <span id="deviceCode-error" class="field-error"></span>
           </div>
           <div class="field-row">
-            <div class="field"><label for="tier">Tier</label><select id="tier" name="tier" aria-describedby="tier-error"><option value="1">Lite</option><option value="2">Full</option></select><span id="tier-error" class="field-error"></span></div>
+            <div class="field"><label for="tier">Requested tier</label><select id="tier" name="tier" aria-describedby="tier-help tier-error"><option value="1">Lite</option><option value="2">Full</option></select><small id="tier-help">This is a request preference. Your verified launcher license determines the edition.</small><span id="tier-error" class="field-error"></span></div>
             <div class="field"><label for="name">Name <span class="requirement">Optional</span></label><input id="name" name="name" type="text" maxlength="80" autocomplete="name" aria-describedby="name-error"><span id="name-error" class="field-error"></span></div>
           </div>
           <div class="field"><label for="email">Reply email <span class="requirement">Required</span></label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required aria-describedby="email-error"><span id="email-error" class="field-error"></span></div>

@@ -43,7 +43,7 @@ export function initializeSite(document, browser, config = siteConfig) {
     });
     form.addEventListener('input', clearErrors);
     void renderRelease(document, config.publicRelease).catch(() => {
-        document.querySelector('#download-meta').textContent = 'Download details could not be verified. No download is offered.';
+        document.querySelector('#download-status').textContent = 'Download details could not be verified. No download is offered.';
     });
     return controller;
 }
